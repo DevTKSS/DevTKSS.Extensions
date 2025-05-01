@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35931.197
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevTKSS.Extensions", "DevTKSS.Extensions\DevTKSS.Extensions.csproj", "{F5947777-4C71-4891-8CFA-DA7952B59043}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevTKSS.Extensions.Uno", "DevTKSS.Extensions.Uno\DevTKSS.Extensions.Uno.csproj", "{1CE455EE-9D98-4BD3-9C6B-B31280A9ECCE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F5947777-4C71-4891-8CFA-DA7952B59043}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5947777-4C71-4891-8CFA-DA7952B59043}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5947777-4C71-4891-8CFA-DA7952B59043}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5947777-4C71-4891-8CFA-DA7952B59043}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CE455EE-9D98-4BD3-9C6B-B31280A9ECCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CE455EE-9D98-4BD3-9C6B-B31280A9ECCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CE455EE-9D98-4BD3-9C6B-B31280A9ECCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CE455EE-9D98-4BD3-9C6B-B31280A9ECCE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {62B1CE64-4CFE-4DCA-8DC6-03BCCC98C5F5}
+	EndGlobalSection
+EndGlobal

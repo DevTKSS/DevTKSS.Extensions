@@ -21,7 +21,7 @@ This repository contains a collection of extensions, which I found useful to hav
 
 ## Have questions? Feature requests? Issues?
 
-Make sure to visit the [Getting Started](doc/articles/getting-started.md), [create an issue](https://github.com/DevTKSS/DevTKSS.Extensions/issues).
+Make sure to visit the [Getting Started](docs/articles/getting-started.md) or [create an issue](https://github.com/DevTKSS/DevTKSS.Extensions/issues).
 
 ## Contributing
 

@@ -2,7 +2,7 @@
 
 This repository contains a collection of extensions, which I found useful to have available building applications in C#.
 
-## Whats in the repository
+## What's in the repository
 
 - **DevTKSS.Extensions:** A collection of general extensions for C#.
   - **MarshalExtensions:** enabling to use `MarshalExtensions.GetActiveObject(...)` to get the active object of a COM object relying on C++ dll import, so this requires still, to have them available in the system ( --> Windows only )

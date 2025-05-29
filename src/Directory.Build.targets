@@ -1,0 +1,10 @@
+<Project>
+<Target Name="CustomBuildStep" AfterTargets="Build">
+  <!-- Example: Copy NuGet packages, README, and LICENSE files to a shared directory -->
+  <Message Text="Copying NuGet packages files to shared directory..." Importance="high" />
+  <ItemGroup>
+    <NuGetPackages Include="$(SolutionDir)**/*.nupkg" />
+  </ItemGroup>
+  <Copy SourceFiles="@(NuGetPackages)" DestinationFolder="$(SolutionDir)build/nuget/" />
+</Target>
+</Project>

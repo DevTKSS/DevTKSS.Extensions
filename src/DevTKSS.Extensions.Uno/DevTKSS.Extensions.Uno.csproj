@@ -8,6 +8,7 @@
 		<AssemblyName>DevTKSS.Extensions.Uno</AssemblyName>
 		<VersionPrefix>1.0.0</VersionPrefix>
 		<VersionSuffix>preview.1.0.0</VersionSuffix>
+		<Version>$(VersionPrefix)-$(VersionSuffix)</Version>
 		<PackageVersion>$(Version)</PackageVersion>
 		<PackageTags>Extensions</PackageTags>
 		<ProduceReferenceAssembly>false</ProduceReferenceAssembly>

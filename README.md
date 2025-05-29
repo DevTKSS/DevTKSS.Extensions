@@ -1,6 +1,6 @@
 # Welcome at the DevTKSS.Extensions Repository
 
-This repository contains a collection of extensions, which I found usefull to have available building applications in C#.
+This repository contains a collection of extensions, which I found useful to have available building applications in C#.
 
 ## Whats in the repository
 

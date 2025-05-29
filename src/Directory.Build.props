@@ -2,7 +2,7 @@
      <PropertyGroup>
 		<!-- Set the output path for NuGet packages -->
 		 <Deterministic>true</Deterministic>
-		<PackageOutputPath>$(SolutionDir)build\nuget\</PackageOutputPath>
+		<PackageOutputPath>$(SolutionDir)build/nuget/</PackageOutputPath>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<RepositoryUrl>https://github.com/DevTKSS/DevTKSS.Extensions</RepositoryUrl>

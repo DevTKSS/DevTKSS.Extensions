@@ -4,7 +4,7 @@ Welcome to this Extensions Documentation!
 
 My name is Sonja Schweitzer, alias DevTKSS at GitHub and Discord.
 
-I am an educated Technical Product Designer for Machines and Plant Engineering, but because of my Job is mostly digital it came in handy over time, to learn programming languages like C#, to automate my daily processes and to create Makros or Applications for my work.
+I am an educated Technical Product Designer for Machines and Plant Engineering, but because of my Job is mostly digital it came in handy over time, to learn programming languages like C#, to automate my daily processes and to create Macros or Applications for my work.
 
 ## Contents of the Extensions
 

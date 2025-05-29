@@ -1,15 +1,22 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-    <UserSecretsId>20f67de4-4437-4fd4-8bb9-5871c40334c6</UserSecretsId>
+	<Nullable>enable</Nullable>
+	<GenerateLibraryLayout>true</GenerateLibraryLayout>
   </PropertyGroup>
+	<PropertyGroup>
+		<AssemblyName>DevTKSS.Extensions.Uno</AssemblyName>
+		<VersionPrefix>1.0.0</VersionPrefix>
+		<VersionSuffix>preview.1.0.0</VersionSuffix>
+		<PackageVersion>$(Version)</PackageVersion>
+		<PackageTags>Extensions</PackageTags>
+		<ProduceReferenceAssembly>false</ProduceReferenceAssembly>
+		<Description>Extensions that are extending Uno Platform functionalities</Description>
+	</PropertyGroup>
 	<ItemGroup>
-		<PackageReference Include="Uno.Core" Version="4.1.1" />
-		<PackageReference Include="Uno.Core.Extensions" Version="4.1.1" />
-		<PackageReference Include="Uno.Core.Extensions.Collections" Version="4.1.1" />
-		<PackageReference Include="Uno.Extensions.Storage" Version="5.2.7" />
+		<PackageReference Include="Uno.Core" />
+		<PackageReference Include="Uno.Core.Extensions" />
+		<PackageReference Include="Uno.Core.Extensions.Collections" />
+		<PackageReference Include="Uno.Extensions.Storage" />
 	</ItemGroup>
 </Project>

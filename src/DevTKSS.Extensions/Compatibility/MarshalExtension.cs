@@ -1,6 +1,6 @@
 ﻿using System.Runtime.InteropServices;
-
-namespace DevTKSS.Extensions.Compartibility;
+// cspell:ignore rclsid ppunk lpsz lpclsid oleaut
+namespace DevTKSS.Extensions.Compatibility;
 /// <summary>
 /// Source code: <see href="https://adndevblog.typepad.com/autocad/2024/07/autocad-2025-marshalgetactiveobject-net-core.html"/>
 /// </summary>

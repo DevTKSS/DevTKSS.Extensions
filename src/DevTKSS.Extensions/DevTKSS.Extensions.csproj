@@ -2,24 +2,17 @@
 
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-	  
-	  <Authors>Sonja Schweitzer</Authors>
-	  <PublisherName>DevTKSS</PublisherName>
-	  <Version>1.0.0</Version>
-	  <VersionSuffix>-pre</VersionSuffix>
-	  <PackageVersion>($Version)</PackageVersion>
-	  <PackageReadmeFile>README.md</PackageReadmeFile>
-	  <RepositoryUrl>https://github.com/DevTKSS/DevTKSS.Extensions</RepositoryUrl>
-	  <PackageTags>Compartiblity ; Marshal ; Desktop ; Windows</PackageTags>
+	<OutputType>Library</OutputType>
   </PropertyGroup>
-
-  <ItemGroup>
-    <None Include="..\..\README.md">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
-  </ItemGroup>
+	
+  <PropertyGroup>
+	<AssemblyName>DevTKSS.Extensions</AssemblyName>
+	<VersionPrefix>1.0.0</VersionPrefix>
+	<VersionSuffix>preview.1.0.0</VersionSuffix>
+	<PackageVersion>$(Version)</PackageVersion>
+	<ProduceReferenceAssembly>false</ProduceReferenceAssembly>
+	<RuntimeIdentifiers>win-x86;win-x64;win-arm64;win</RuntimeIdentifiers>
+	<PackageTags>Comparability;Marshal;Desktop;Windows</PackageTags>
+  </PropertyGroup>
 
 </Project>

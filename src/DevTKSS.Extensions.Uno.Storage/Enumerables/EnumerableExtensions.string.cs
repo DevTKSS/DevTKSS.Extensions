@@ -51,7 +51,7 @@ public static class EnumerableExtensions
             max: source.Count()); // Ensure 'End' does not exceed available lines
 
         return source.Skip(startIndex)
-                     .Take(endIndex - startIndex)
+                     .Take(endIndex - startIndex + 1)
                      .JoinBy(Environment.NewLine);
     }
 }

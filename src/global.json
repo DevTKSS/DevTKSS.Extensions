@@ -1,0 +1,10 @@
+{
+  "sdk": {
+    "allowPrerelease": false
+  },
+  "msbuild-sdks": {
+    "Uno.Sdk": "6.0.110",
+    "MSBuild.Sdk.Extras": "3.0.44",
+    "Microsoft.Build.NoTargets": "3.7.56"
+  }
+}

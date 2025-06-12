@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>net8.0;net9.0</TargetFrameworks>
+		<OutputType>Library</OutputType>
+		<!-- Ensures the .xr.xml files are generated in a proper layout folder -->
+		<GenerateLibraryLayout>true</GenerateLibraryLayout>
+	</PropertyGroup>
+
+	<PropertyGroup Label="PackageProps">
+		<VersionPrefix>1.0.0</VersionPrefix>
+		<VersionSuffix>preview.1.0.0</VersionSuffix>
+		<PackageVersion>$(VersionPrefix)-$(VersionSuffix)</PackageVersion>
+		<ProduceReferenceAssembly>false</ProduceReferenceAssembly>
+		<PackageTags>Extensions;Files;Serialization;Uno;Enumerable</PackageTags>
+	</PropertyGroup>
+</Project>

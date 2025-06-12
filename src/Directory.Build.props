@@ -1,0 +1,19 @@
+   <Project>
+     <PropertyGroup>
+		<!-- Set the output path for NuGet packages -->
+		 <Deterministic>true</Deterministic>
+		<PackageOutputPath>$(SolutionDir)build/nuget/</PackageOutputPath>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<RepositoryUrl>https://github.com/DevTKSS/DevTKSS.Inventor</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<Copyright>Copyright (C) 2025-$([System.DateTime]::Now.ToString('yyyy')) Sonja Schweitzer - all rights reserved</Copyright>
+		<Authors>Sonja Schweitzer</Authors>
+		<PublisherName>DevTKSS</PublisherName>
+		<PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+		<PackageId>$(ProjectName)</PackageId>
+		<NeutralLanguage>en-DE</NeutralLanguage>
+		<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+	<ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+     </PropertyGroup>
+   </Project>

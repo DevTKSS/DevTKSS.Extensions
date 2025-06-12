@@ -1,7 +1,7 @@
-using DevTKSS.Extensions.Uno.Enumerable;
+using DevTKSS.Extensions.Uno.Storage.Enumerables;
 
 namespace DevTKSS.Extensions.Uno.Storage;
-internal static class StorageExtensions
+public static class StorageExtensions
 {
     /// <summary>
     /// Reads specific lines from a file asynchronously based on the provided line ranges.
@@ -20,14 +20,13 @@ internal static class StorageExtensions
     public static async ValueTask<string> ReadLinesFromPackageFile(this IStorage storage, string filePath, IEnumerable<(int, int)> lineRanges)
     {
         string fileContent = await storage.ReadPackageFileAsync(filePath) ?? string.Empty;
-
-        if (!(lineRanges.Any()))
+        if (!lineRanges.Any())
         {
             return fileContent;
         }
 
         return fileContent.Split(Environment.NewLine)
-                          .SelectItemsByRanges(lineRanges)
+                          .SelectItemsByRanges(lineRanges,false)
                           .JoinBy(Environment.NewLine);
     }
 }

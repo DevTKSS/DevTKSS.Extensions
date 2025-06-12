@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net8.0;net9.0</TargetFrameworks>
+    <GenerateLibraryLayout>true</GenerateLibraryLayout>
+    <OutputType>Library</OutputType>
+  </PropertyGroup>
+  
+  <PropertyGroup>
+    <VersionPrefix>1.0.0</VersionPrefix>
+    <VersionSuffix>preview.1.0.0</VersionSuffix>
+    <PackageVersion>$(VersionPrefix)-$(VersionSuffix)</PackageVersion>
+    <ProduceReferenceAssembly>false</ProduceReferenceAssembly>
+    <RuntimeIdentifiers>win</RuntimeIdentifiers>
+    <PackageTags>Compatibility;Interop;Marshal;Windows</PackageTags>
+
+  </PropertyGroup>
+
+</Project>

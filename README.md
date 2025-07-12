@@ -15,6 +15,6 @@ The solution consists of the following libraries:
 
 All libraries are designed for easy integration and follow modern .NET best practices. Multi-targeting for .NET 8 and .NET 9 is supported, and Uno Platform compatibility is provided where relevant.
 
-For a quick start, see [getting-started.md](getting-started.md).
+For a quick start, see [getting-started.md](./docs/articles/getting-started.md).
 
 > **API documentation** will be generated with DocFX and is available separately.

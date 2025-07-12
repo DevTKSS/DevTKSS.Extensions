@@ -1,4 +1,8 @@
-namespace DevTKSS.Extensions.Uno.Storage.Enumerables;
+namespace DevTKSS.Extensions.Uno.Storage.Enumerable;
+
+/// <summary>
+/// Provides <see cref="IEnumerable{TResult}"/> extension methods for working with <see cref="IStorage"/>
+/// </summary>
 public static class EnumerableExtensions
 {
     /// <summary>
@@ -9,49 +13,76 @@ public static class EnumerableExtensions
     /// A collection of ranges, where each range is a tuple containing a start and end index.
     /// The start index specifies the first item to include, and the end index specifies the last item to include.
     /// </param>
+    /// <param name="isNullBased">
+    /// Indicates whether the range indices are 0-based (<c>true</c>) or 1-based (<c>false</c>).
+    /// If <c>true</c>, the start and end indices are treated as 0-based; otherwise, they are treated as 1-based.
+    /// </param>
     /// <returns>
-    /// An enumerable collection of strings, where each string represents the items within a specified range.
+    /// An <see cref="IEnumerable{string}"/> where each string represents the items within a specified range.
     /// If a range is invalid (e.g. start is greater than the last one), an empty string is returned for that range.
     /// </returns>
-    public static IEnumerable<string> SelectItemsByRanges(this IEnumerable<string> source, IEnumerable<(int Start, int End)> ranges, bool nullBased = true)
+    public static IEnumerable<string> SelectItemsByRanges(this IEnumerable<string> source, IEnumerable<(int Start, int End)> ranges, bool isNullBased = true)
     {
-        if (ranges == null || !ranges.Any()) yield return string.Empty;
-        else
+        if (source is null || ranges is null)
         {
-            foreach (var range in ranges)
-            {
-                yield return source.GetItemsWithinRange(range, nullBased);
-            }
+            yield return string.Empty;
+            yield break;
+        }
+
+        if (!ranges.Any())
+        {
+            yield return source.JoinBy(Environment.NewLine);
+            yield break;
+        }
+
+        foreach (var range in ranges)
+        {
+            yield return source.GetItemsWithinRange(range, isNullBased);
         }
     }
 
     /// <summary>
-    /// Retrieves a single string containing the concatenated items within the specified range.
+    /// Retrieves the concatenated items within the specified range as one single <see langword="string"/> joined by <see cref="Environment.NewLine"/> character.
     /// </summary>
-    /// <param name="source">The collection to select from.</param>
+    /// <param name="sourceItems">The <see cref="IEnumerable{TData}"/> to select from.</param>
     /// <param name="range">
-    /// A tuple containing the start and end indices of the range.
+    /// A tuple containing the start and end indices of the range as <see langword="int"/>.
     /// The start index specifies the first item to include, and the end index specifies the last item to include.
     /// </param>
-    /// <param name="nullBased">set to false if providing a known 1-based Enumerable</param>
+    /// <param name="isNullBased">
+    /// Indicates whether the range indices are 0-based (<c>true</c>) or 1-based (<c>false</c>).
+    /// If <c>true</c>, the start and end indices are treated as 0-based; otherwise, they are treated as 1-based.
+    /// </param>
     /// <returns>
-    /// A string containing the string typed items of <paramref name="source"/> within the specified range, joined by the system's newline character.
+    /// A <see langword="string"/> containing the Items of <paramref name="sourceItems"/> within the specified range, joined by <see cref="Environment.NewLine"/
+    /// >.
     /// </returns>
-    public static string GetItemsWithinRange(this IEnumerable<string> source, (int Start, int End) range, bool nullBased = true)
+    public static string GetItemsWithinRange(this IEnumerable<string> sourceItems, (int Start, int End) range, bool isNullBased = true) // TODO: Consider to limit int to min 0 value instead of implicit allowing negative.
     {
-        if (source == null || !source.Any()) return string.Empty;
+        if (sourceItems is null)
+        {
+            return string.Empty;
+        }
+
+        var list = sourceItems as IList<string> ?? [.. sourceItems];
+        if (list.Count == 0)
+        {
+            return string.Empty;
+        }
+
+        var baseItem = isNullBased ? 0 : 1;
         var startIndex = Math.Clamp(
-            value: range.Start - (nullBased ? 0 : 1),
-            min: 0,
-            max: source.Count());
+            value: range.Start - baseItem,
+            min: baseItem,
+            max: list.Count);
 
         var endIndex = Math.Clamp(
-            value: range.End,
+            value: range.End - baseItem,
             min: startIndex,
-            max: source.Count()); // Ensure 'End' does not exceed available lines
+            max: list.Count); // Ensure 'End' does not exceed available lines
 
-        return source.Skip(startIndex)
-                     .Take(endIndex - startIndex + 1)
-                     .JoinBy(Environment.NewLine);
+        return list.Skip(startIndex)
+                   .Take(endIndex - startIndex)
+                   .JoinBy(Environment.NewLine);
     }
 }

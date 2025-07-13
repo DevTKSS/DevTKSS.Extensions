@@ -42,20 +42,21 @@ public static class EnumerableExtensions
     }
 
     /// <summary>
-    /// Retrieves the concatenated items within the specified range as one single <see langword="string"/> joined by <see cref="Environment.NewLine"/> character.
+    /// Retrieves the concatenated items within the specified range as a single string, joined by <see cref="Environment.NewLine"/>.
     /// </summary>
-    /// <param name="sourceItems">The <see cref="IEnumerable{TData}"/> to select from.</param>
+    /// <param name="sourceItems">The collection of string items to select from.</param>
     /// <param name="range">
     /// A tuple containing the start and end indices of the range as <see langword="int"/>.
-    /// The start index specifies the first item to include, and the end index specifies the last item to include.
+    /// The start index specifies the first item to include, and the end index specifies the last item to include (exclusive).
+    /// Indices are clamped to valid bounds; if start is greater than end, an empty string is returned.
     /// </param>
     /// <param name="isNullBased">
     /// Indicates whether the range indices are 0-based (<c>true</c>) or 1-based (<c>false</c>).
     /// If <c>true</c>, the start and end indices are treated as 0-based; otherwise, they are treated as 1-based.
     /// </param>
     /// <returns>
-    /// A <see langword="string"/> containing the Items of <paramref name="sourceItems"/> within the specified range, joined by <see cref="Environment.NewLine"/
-    /// >.
+    /// A string containing the items of <paramref name="sourceItems"/> within the specified range, joined by <see cref="Environment.NewLine"/>.
+    /// Returns an empty string if the input is null, empty, or the range is invalid.
     /// </returns>
     public static string GetItemsWithinRange(this IEnumerable<string> sourceItems, (int Start, int End) range, bool isNullBased = true) // TODO: Consider to limit int to min 0 value instead of implicit allowing negative.
     {
@@ -64,7 +65,7 @@ public static class EnumerableExtensions
             return string.Empty;
         }
 
-        var list = sourceItems as IList<string> ?? [.. sourceItems];
+        var list = sourceItems as IList<string> ?? sourceItems.ToList();
         if (list.Count == 0)
         {
             return string.Empty;
@@ -75,6 +76,13 @@ public static class EnumerableExtensions
             value: range.Start - baseItem,
             min: baseItem,
             max: list.Count);
+
+        var endItem = range.End switch
+        {
+            range.End == startIndex => list.Count, // If End is less than Start, treat it as the end of the list
+            range.End < startIndex => startIndex, // If End is less than Start, treat it as Start
+            _ => range.End
+        };
 
         var endIndex = Math.Clamp(
             value: range.End - baseItem,

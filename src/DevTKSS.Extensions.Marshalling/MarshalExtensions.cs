@@ -2,9 +2,11 @@ using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 // cspell:ignore rclsid ppunk lpsz lpclsid oleaut UCOMI ppbc
 namespace DevTKSS.Extensions.Marshalling;
+// This is particularly useful for accessing COM objects like Application objects.
+// Source code: <see href="https://adndevblog.typepad.com/autocad/2024/07/autocad-2025-marshalgetactiveobject-net-core.html"/>
 
 /// <summary>
-/// Source code: <see href="https://adndevblog.typepad.com/autocad/2024/07/autocad-2025-marshalgetactiveobject-net-core.html"/>
+/// Provides methods for marshalling COM objects in .NET Core.
 /// </summary>
 public static class MarshalExtensions
 {

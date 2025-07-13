@@ -3,7 +3,7 @@ using System.Numerics;
 namespace DevTKSS.Extensions.Numerics;
 
 /// <summary>
-/// Bietet allgemeine trigonometrische Hilfsmethoden für generische numerische Typen.
+/// Provides general trigonometric helper methods for generic numeric types.
 /// </summary>
 public static class Trigonometry
 {

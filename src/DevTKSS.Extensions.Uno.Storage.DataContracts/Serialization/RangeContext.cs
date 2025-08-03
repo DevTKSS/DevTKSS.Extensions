@@ -1,7 +1,5 @@
-﻿using System.Collections.Immutable;
-using System.Text.Json.Serialization;
+﻿namespace DevTKSS.Extensions.Uno.Storage.DataContracts.Serialization
 
-namespace DevTKSS.Extensions.Enumerable.DataContracts.Serialization;
 [JsonSerializable(typeof(Ranges))]
 [JsonSerializable(typeof(Ranges[]))]
 [JsonSerializable(typeof(IEnumerable<Ranges>))]

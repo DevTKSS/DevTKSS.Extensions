@@ -1,10 +1,10 @@
 ﻿using System.Runtime.InteropServices;
-
-namespace DevTKSS.Extensions.Compartiblity;
+// cspell:ignore rclsid ppunk lpsz lpclsid oleaut
+namespace DevTKSS.Extensions.Compatibility;
 /// <summary>
 /// Source code: <see href="https://adndevblog.typepad.com/autocad/2024/07/autocad-2025-marshalgetactiveobject-net-core.html"/>
 /// </summary>
-internal static class MarshalExtension
+public static class MarshalExtension
 {
     [DllImport("ole32")]
     private static extern int CLSIDFromProgIDEx(
@@ -13,7 +13,7 @@ internal static class MarshalExtension
     [DllImport("oleaut32")]
     private static extern int GetActiveObject(
       [MarshalAs(UnmanagedType.LPStruct)] Guid rclsid,
-      IntPtr pvReserved,
+      nint pvReserved,
       [MarshalAs(UnmanagedType.IUnknown)] out object ppunk);
 
     public static object? GetActiveObject(string progId,
@@ -30,7 +30,7 @@ internal static class MarshalExtension
 
             return null;
         }
-        hr = GetActiveObject(clsid, IntPtr.Zero, out var obj);
+        hr = GetActiveObject(clsid, nint.Zero, out var obj);
         if (hr < 0)
         {
             if (throwOnError)
